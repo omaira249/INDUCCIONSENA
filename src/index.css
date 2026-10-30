@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: #0f172a;
+    background-color: #f8fafc;
+    transition: background-color 0.35s ease, color 0.35s ease;
+  }
+}
+
+/* Dark mode root styles */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #0b1120;
+  color: #f1f5f9;
+}
+
+/* Theme Blur Transition Keyframes */
+@keyframes themeBlurEffect {
+  0% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+  45% {
+    filter: blur(6px);
+    opacity: 0.94;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+.theme-blur-transition {
+  animation: themeBlurEffect 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Dark mode component overrides for clean contrast */
+html.dark .bg-white {
+  background-color: #111827 !important;
+}
+
+html.dark .bg-slate-50 {
+  background-color: #0f172a !important;
+}
+
+html.dark .bg-slate-100 {
+  background-color: #1e293b !important;
+}
+
+html.dark .border-slate-200,
+html.dark .border-slate-100 {
+  border-color: #1f2937 !important;
+}
+
+html.dark .border-slate-300 {
+  border-color: #374151 !important;
+}
+
+html.dark .text-slate-900 {
+  color: #f9fafb !important;
+}
+
+html.dark .text-slate-800 {
+  color: #f3f4f6 !important;
+}
+
+html.dark .text-slate-700 {
+  color: #e5e7eb !important;
+}
+
+html.dark .text-slate-600 {
+  color: #9ca3af !important;
+}
+
+html.dark .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+html.dark header {
+  background-color: rgba(17, 24, 39, 0.92) !important;
+  border-color: #1f2937 !important;
+}
+
+html.dark footer {
+  background-color: #111827 !important;
+  border-color: #1f2937 !important;
+}
+
+html.dark input, 
+html.dark select, 
+html.dark textarea {
+  background-color: #1e293b !important;
+  color: #f9fafb !important;
+  border-color: #374151 !important;
+}
+
+html.dark select option {
+  background-color: #1e293b;
+  color: #f9fafb;
+}
+
+html.dark .bg-emerald-50 {
+  background-color: rgba(6, 78, 59, 0.25) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+html.dark .text-emerald-800,
+html.dark .text-emerald-900,
+html.dark .text-emerald-950 {
+  color: #6ee7b7 !important;
+}
+
+html.dark .bg-amber-50 {
+  background-color: rgba(120, 53, 15, 0.25) !important;
+  border-color: rgba(245, 158, 11, 0.3) !important;
+}
+
+html.dark .text-amber-900 {
+  color: #fcd34d !important;
+}
+
+html.dark .bg-rose-50 {
+  background-color: rgba(136, 19, 55, 0.25) !important;
+  border-color: rgba(244, 63, 94, 0.3) !important;
+}
+
+html.dark .text-rose-900,
+html.dark .text-rose-950 {
+  color: #fda4af !important;
+}
+
+html.dark .bg-blue-50 {
+  background-color: rgba(30, 58, 138, 0.25) !important;
+  border-color: rgba(59, 130, 246, 0.3) !important;
+}
+
+html.dark .text-blue-900 {
+  color: #93c5fd !important;
+}
+
+html.dark .bg-purple-50 {
+  background-color: rgba(88, 28, 135, 0.25) !important;
+  border-color: rgba(168, 85, 247, 0.3) !important;
+}
+
+html.dark .text-purple-900 {
+  color: #d8b4fe !important;
+}
+
+/* Keep certificate pristine in print or modal */
+#sena-certificate-print {
+  background-color: #FDFEFA !important;
+  color: #0f172a !important;
+}
+#sena-certificate-print * {
+  color: inherit;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #sena-certificate-print, #sena-certificate-print * {
+    visibility: visible;
+  }
+  #sena-certificate-print {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}

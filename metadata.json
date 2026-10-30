@@ -1,0 +1,5 @@
+{
+  "name": "SENA-Portal",
+  "description": "Plataforma institucional de gestión para aprendices e instructores SENA con acceso seguro y normativa actualizada.",
+  "major_capability": "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+}
